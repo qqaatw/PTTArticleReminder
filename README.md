@@ -1,5 +1,9 @@
 # PTT Article Reminder
 
+## Feature
+
+持續擷取PTT看板上的新文章並根據關鍵字傳送提醒至Line或Telegram。
+
 ## Supported services
 
 - Line
@@ -13,7 +17,7 @@
 - requests
 - requests-html
 - optional
-    - line-bot-sdk==1.15.0 (If you want using line.)
+    - line-bot-sdk (If you want using line.)
     - python-telegram-bot (If you want using telegram.)
 
 ### Installation
