@@ -2,6 +2,8 @@
 
 ## Feature
 
+Continuously fetching new articles which match the keywords on PTT boards and reminding you through Line or Telegram.
+
 持續擷取PTT看板上的新文章並根據關鍵字傳送提醒至Line或Telegram。
 
 ## Supported services
@@ -43,7 +45,7 @@
             },
             { // Second used service, it will takeover when the first service failed.
                 "name": "telegram",
-                "enable": "false",
+                "enable": "true",
                 "bot_token": "BOT TOKEN",
                 "client_list": {
                     "custom name A": "CHAT ID OR USERNAME",
@@ -64,9 +66,9 @@ Note:
         -k [keywords, divided by comma] \
         -u [custom name in config.json]
     
-    E.g. python article_reminder.py -b PC_Shopping -k cyberpower -b Storage_Zone -k toshiba,wd -u ABC
+    E.g. python article_reminder.py -b PC_Shopping -k cyberpower -b Storage_Zone -k toshiba,wd -u myusername
     
-Notes:
+Note:
 
 1. There is a 30 mins watchdog timer in the loop to ensure that the program works fine.
 2. Keywords are not case-sensitive.
@@ -74,6 +76,6 @@ Notes:
 
 ## License
 
-- Apache 2.0
+- Apache License 2.0
 - Submodules:
     - CrawlerTutorial 由leVirve製作，以創用CC 姓名標示 4.0 國際 授權條款釋出。

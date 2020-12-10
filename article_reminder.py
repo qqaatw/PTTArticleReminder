@@ -1,13 +1,14 @@
+import argparse
+import asyncio
 import re
 import sys
-import time
-import asyncio
-import argparse
 import traceback
 
 sys.path.insert(0, 'CrawlerTutorial/ptt-parser/')
 import ptt
+
 import api_handler
+
 
 class ArticleReminder:
     """Periodically checking new articles on ptt.
@@ -148,4 +149,5 @@ if __name__ == "__main__":
     
     
     reminder = ArticleReminder(watchdog_interval=args.watchdog)
+    
     asyncio.run(reminder.run(args.keywords, args.boards, args.username))

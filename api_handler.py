@@ -26,6 +26,6 @@ def send_message(text, receiver):
 
 def broadcast_message(text):
     for enabled_api in enabled_apis:
-        if enabled_api.broadcast_message(text, receiver):
+        if enabled_api.broadcast_message(text):
             return
     raise RuntimeError('All APIs are unavailable.')
