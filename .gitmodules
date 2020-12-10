@@ -1,0 +1,3 @@
+[submodule "CrawlerTutorial"]
+	path = CrawlerTutorial
+	url = https://github.com/leVirve/CrawlerTutorial.git
