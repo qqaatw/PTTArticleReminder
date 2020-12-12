@@ -6,12 +6,14 @@ Continuously fetching new articles which match the keywords on PTT boards and re
 
 持續擷取PTT看板上的新文章並根據關鍵字傳送提醒至Line或Telegram。
 
+![Screen Shot](screenshot.jpg)
+
 ## Supported services
 
 - Line
 - Telegram
 
-## Prerequisie
+## Prerequisite
 
 ### Python
 
