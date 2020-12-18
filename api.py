@@ -96,17 +96,18 @@ class TelegramAPI(API):
         try:
             chat_id = int(client)
         except:
-            chat_id = self.chat_ids[client]
+            chat_id = self.chat_ids.get(client)
         return chat_id
 
     def send_message(self, text: str, receiver: str):
-        try:
-            chat_id = self._get_chat_id(self.client_list[receiver])
-            self.telegram_api.send_message(chat_id=chat_id, text=text)
-            return True
-        except:
-            traceback.print_exc()
-            return False
+        chat_id = self._get_chat_id(self.client_list[receiver])
+        if chat_id:
+            try:
+                self.telegram_api.send_message(chat_id=chat_id, text=text)
+                return True
+            except:
+                traceback.print_exc()
+        return False
     
     def broadcast_message(self, text: str):
         return False

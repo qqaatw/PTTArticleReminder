@@ -89,8 +89,11 @@ class ArticleReminder:
                 watchdog = 0
                 api_handler.send_message('Watchdog: {}'.format(board_name), receiver)
 
-            result = self.pttGetMetadata(keyword, board_name)
-            
+            try:
+                result = self.pttGetMetadata(keyword, board_name)
+            except:
+                traceback.print_exc()
+
             for r in result:
                 api_handler.send_message('New article \n {}'.format(r), receiver)
             await asyncio.sleep(60)
